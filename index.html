@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="theme-color" content="#2D3A47">
 <title>Na Cozinha com a Lili — O Meu Livro de Receitas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -237,6 +238,50 @@ footer .script{color:var(--blush)}
 .ghostbtn{background:none;border:none;font-weight:800;color:var(--rosedeep);cursor:pointer;font-size:14px}
 #escolaHost .panel,#equipHost .panel,#notasHost .panel{background:var(--paper)}
 input[type=text],textarea{font-family:'Jost'}
+/* v8.1 — ADJUSTABLE FRAME: fluid fit for phone, iPad portrait/landscape and rotation.
+   No fixed frame sizes: widths are fr/% with max-width only as an upper bound; heights use dvh.
+   The media queries re-fit the frame on rotation/resize with no reload. */
+:root{--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);--sal:env(safe-area-inset-left,0px);--sar:env(safe-area-inset-right,0px)}
+header{padding-top:calc(10px + var(--sat));padding-left:calc(16px + var(--sal));padding-right:calc(16px + var(--sar))}
+nav#tabs{top:calc(64px + var(--sat));padding-left:calc(10px + var(--sal));padding-right:calc(10px + var(--sar))}
+.searchbar{top:calc(112px + var(--sat));padding-left:calc(14px + var(--sal));padding-right:calc(14px + var(--sar))}
+.band{scroll-margin-top:calc(158px + var(--sat));padding-left:calc(16px + var(--sal));padding-right:calc(16px + var(--sar))}
+footer{padding-bottom:calc(34px + var(--sab));padding-left:calc(18px + var(--sal));padding-right:calc(18px + var(--sar))}
+#guide .inner{padding-top:calc(22px + var(--sat));padding-bottom:calc(40px + var(--sab));padding-left:calc(18px + var(--sal));padding-right:calc(18px + var(--sar))}
+.coverpage{min-height:calc(100vh - 158px);min-height:calc(100dvh - 158px - var(--sat));padding-left:calc(18px + var(--sal));padding-right:calc(18px + var(--sar))}
+/* overflow guards: no child may force the frame wider than the screen */
+.grid>*,.specgrid>*,.tiles>*,.gal>*,.infostrip>*,.relgrid>*,.ringo-keygrid>*,.ingchips>*,.covergrid>*,.twocol>*{min-width:0}
+.dayrow>div,.nutrow>div,.relcard>div{min-width:0}
+.idxrow .nm{flex:1;min-width:0}
+.dayrow .pt,.idxrow .nm,.nutrow .t{overflow-wrap:break-word}
+table.med{max-width:100%}
+table.med th,table.med td{overflow-wrap:break-word}
+pre{max-width:100%;white-space:pre-wrap}
+video,iframe{max-width:100%}
+@media(min-width:768px){
+.band .in{max-width:900px}
+section[id^="receita-"] .in{max-width:900px}
+#guide .inner{max-width:860px}
+.grid{grid-template-columns:repeat(2,1fr)}
+.specgrid{grid-template-columns:repeat(2,1fr)}
+.tiles{grid-template-columns:repeat(2,1fr)}
+.heroimg{height:400px}
+}
+@media(min-width:1024px){
+.band{padding-left:calc(28px + var(--sal));padding-right:calc(28px + var(--sar))}
+.band .in{max-width:1240px}
+.coverpage .cv{max-width:760px}
+.search{max-width:760px}
+}
+@media(min-width:1100px){
+.grid{grid-template-columns:repeat(3,1fr)}
+.specgrid{grid-template-columns:repeat(3,1fr)}
+.tiles{grid-template-columns:repeat(3,1fr)}
+.heroimg{height:440px}
+}
+@media(min-width:1400px){
+.grid{grid-template-columns:repeat(4,1fr)}
+}
 </style></head>
 <body>
 <header><div class="brand">Na Cozinha com a Lili<small>livro de receitas interactivo · interactive recipe book</small></div></header>
